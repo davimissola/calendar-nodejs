@@ -1,14 +1,16 @@
 import auth from './models.js'
+import { criarHash, compararHash, criarJwt } from './service.js'
 
 
 class authController {
 
     static async criarConta(req, res) {
         try {
-            const {username, password} = req.body
-            const resultado = await auth.criarConta(username, password)
+            const {ra, username, senha} = req.body
+            const hashed_senha = await criarHash(senha)
+            const usuario = await auth.criarConta(ra, username, hashed_senha)
 
-            if (resultado < 1) {
+            if (usuario < 1) {
                 return res.status(400).json({message: 'Nenhum usuário criado.'})
             }
 
@@ -20,14 +22,22 @@ class authController {
 
     static async login(req, res) {
         try {
-            const {username, password} = req.body
-            const resultado = await auth.login(username, password)
+            const {username, senha} = req.body
             
-            if (!resultado) {
-                return res.status(404).json({message: 'Usuário não encontrado.'})
+            const usuario = await auth.login(username)
+            
+            if (!usuario) {
+                return res.status(404).json({message: 'Nome de usuário incorreto.'})
             }
 
-            return res.status(200).json({message: `Usuário: ${resultado.username}`})
+            const senha_correta = await compararHash(senha, usuario.senha)
+            if (!senha_correta) {
+                return res.status(404).json({message: 'Senha incorreta.'})
+            }
+
+            const token = await criarJwt(usuario.id)
+
+            return res.status(200).json({access_token: token, token_type: "Bearer"});
         } catch(error) {
             return res.status(500).json({message: error})
         }
