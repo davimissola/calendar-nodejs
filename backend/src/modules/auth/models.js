@@ -24,6 +24,16 @@ class auth {
             `)
         return resultado.recordset[0]
     }
+
+    static async userMe(id) {
+        const conexao = await conectaDb()
+        const resultado = await conexao.query(`
+            SELECT *
+            FROM CalendarNode.Usuarios
+            WHERE id=${id}
+            `)
+        return resultado.recordset[0]
+    }
 }
 
 

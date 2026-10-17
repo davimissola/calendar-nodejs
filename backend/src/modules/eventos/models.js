@@ -36,10 +36,6 @@ class eventos {
         return resultado.rowsAffected[0]
     }
 
-    static async editarEvento() {
-
-    }
-
     static async removerEvento(id_evento) {
         const conexao = await conectaDb()
         const resultado = await conexao.query(`

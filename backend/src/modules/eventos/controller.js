@@ -36,7 +36,7 @@ class eventosController {
 
     static async adicionarEvento(req, res) {
         try {
-            const { titulo, descricao = null, data, horario = null } = req.body
+            const { titulo, descricao = null, data, horario } = req.body
 
             // teste, criar modulo user pra pegar pelo token
             const id_usuario = 3
@@ -51,10 +51,6 @@ class eventosController {
         } catch(error) {
             return res.status(500).json({message: error})
         }
-    }
-
-    static async editarEvento() {
-
     }
 
     static async removerEvento(req, res) {

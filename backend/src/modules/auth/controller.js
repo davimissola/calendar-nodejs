@@ -1,5 +1,5 @@
 import auth from './models.js'
-import { criarHash, compararHash, criarJwt } from './service.js'
+import { criarHash, compararHash, criarJwt, verificarJwt } from './service.js'
 
 
 class authController {
@@ -40,6 +40,27 @@ class authController {
             return res.status(200).json({access_token: token, token_type: "Bearer"});
         } catch(error) {
             return res.status(500).json({message: error})
+        }
+    }
+
+    static async userMe(req, res) {
+        try {
+            const token = req.get("Authorization")
+
+            if (!token) {
+                return res.status(401).json({message: "Rota protegida."})
+            }
+            const payload = await verificarJwt(token)
+
+            const user = await auth.userMe(Number(payload.id))
+
+            if (!user) {
+                return res.status(404).json({message: "Token inválido."})
+            }
+
+            return res.status(200).json({user})
+        } catch(error) {
+            return res.status(404).json({message: "Token inválido."})
         }
     }
 }
