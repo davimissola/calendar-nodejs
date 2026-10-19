@@ -44,24 +44,8 @@ class authController {
     }
 
     static async userMe(req, res) {
-        try {
-            const token = req.get("Authorization")
-
-            if (!token) {
-                return res.status(401).json({message: "Rota protegida."})
-            }
-            const payload = await verificarJwt(token)
-
-            const user = await auth.userMe(Number(payload.id))
-
-            if (!user) {
-                return res.status(404).json({message: "Token inválido."})
-            }
-
-            return res.status(200).json({user})
-        } catch(error) {
-            return res.status(404).json({message: "Token inválido."})
-        }
+        const user = req.user
+        return res.status(200).json({user})
     }
 }
 
