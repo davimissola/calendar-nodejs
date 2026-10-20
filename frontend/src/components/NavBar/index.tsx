@@ -12,11 +12,10 @@ export function NavBar() {
             <div className="navbar__div-navbar">         
                 <Link to='/' className='link-ativo'>Home</Link>   
                 <Link to='/'>Grupos</Link> 
-                <Link to='/'>Eventos</Link>    
-                <Link to='/'>Logout</Link>  
+                <Link to='/'>Eventos</Link>                  
             </div>
             <div>
-
+                <Link to='/'>Logout</Link>  
             </div>
         </div>
     )

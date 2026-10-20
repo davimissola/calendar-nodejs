@@ -3,8 +3,9 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
-    background-color: var(--cinza-200);
+    width: 250px;
+    background-color: var(--cinza-900);
+    border-right: 2px solid var(--cinza-800);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,14 +32,14 @@
     font-size: 16px;
     letter-spacing: -.5px;
     transition: all 0.4s ease;
-    padding: 7px 60px;
-    border-radius: 100px;
+    padding: 10px 85px;
+    border-radius: 15px;
 }
 
 .navbar__div-navbar a:hover {
-    color: var(--cinza-410);
+    color: var(--cinza-350);
 }
 
 .link-ativo {
-    background-color: var(--cinza-100);
+    background-color: var(--cinza-850);
 }
