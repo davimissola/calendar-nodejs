@@ -1,25 +1,51 @@
-node_modules/ **/node_modules/
+node_modules/
+**/node_modules/
 
-.env .env.* !.env.example !.env.*.example
+.env
+.env.*
+!.env.example
+!.env.*.example
 
-dist/ build/ coverage/ *.tsbuildinfo
+dist/
+build/
+coverage/
+*.tsbuildinfo
 
-logs/ .log npm-debug.log yarn-debug.log* yarn-error.log* pnpm-debug.log*
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-.cache/ .vite/ .next/ .turbo/ .eslintcache
+.cache/
+.vite/
+.next/
+.turbo/
+.eslintcache
 
-tmp/ temp/ *.tmp
+tmp/
+temp/
+*.tmp
 
-.DS_Store Thumbs.db desktop.ini
+.DS_Store
+Thumbs.db
+desktop.ini
 
-.vscode/* !.vscode/extensions.json .idea/
+.vscode/*
+!.vscode/extensions.json
+.idea/
 
-playwright-report/ test-results/
+playwright-report/
+test-results/
 
 uploads/
 
 *.local
 
-pids/ *.pid *.seed *.pid.lock
+pids/
+*.pid
+*.seed
+*.pid.lock
 
 .npm/
