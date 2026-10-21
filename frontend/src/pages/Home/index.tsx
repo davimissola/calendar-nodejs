@@ -7,6 +7,7 @@ export function Home() {
     return (
         <main className='page-home'>
             <NavBar />
+
         </main>
     )
 }

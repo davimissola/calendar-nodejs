@@ -6,9 +6,9 @@ class authController {
 
     static async criarConta(req, res) {
         try {
-            const {ra, username, senha} = req.body
+            const {username, senha} = req.body
             const hashed_senha = await criarHash(senha)
-            const usuario = await auth.criarConta(ra, username, hashed_senha)
+            const usuario = await auth.criarConta(username, hashed_senha)
 
             if (usuario < 1) {
                 return res.status(400).json({message: 'Nenhum usuário criado.'})

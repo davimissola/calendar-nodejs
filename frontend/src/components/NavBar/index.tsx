@@ -14,7 +14,7 @@ export function NavBar() {
                 <Link to='/'>Grupos</Link> 
                 <Link to='/'>Eventos</Link>                  
             </div>
-            <div>
+            <div className='navbar__div-footer'>
                 <Link to='/'>Logout</Link>  
             </div>
         </div>

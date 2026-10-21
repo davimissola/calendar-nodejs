@@ -4,8 +4,7 @@
     left: 0;
     bottom: 0;
     width: 250px;
-    background-color: var(--cinza-900);
-    border-right: 2px solid var(--cinza-800);
+    background-color: var(--cinza-300);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,7 +16,7 @@
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -.5px;
-    color: var(--cinza-400);
+    color: var(--cinza-500);
 }
 
 .navbar__div-navbar {
@@ -28,7 +27,7 @@
 
 .navbar__div-navbar a {
     text-decoration: none;
-    color: var(--cinza-400);
+    color: var(--cinza-500);
     font-size: 16px;
     letter-spacing: -.5px;
     transition: all 0.4s ease;
@@ -37,9 +36,22 @@
 }
 
 .navbar__div-navbar a:hover {
-    color: var(--cinza-350);
+    color: var(--cinza-550);
 }
 
 .link-ativo {
-    background-color: var(--cinza-850);
+    background-color: var(--cinza-320);
+}
+
+.navbar__div-footer a {
+    color: var(--cinza-500);
+    text-decoration: none;
+    background-color: var(--cinza-320);
+    padding: 10px 85px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar__div-footer a:hover {
+    color: var(--cinza-550);
 }

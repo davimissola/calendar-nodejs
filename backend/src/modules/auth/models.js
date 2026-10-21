@@ -4,12 +4,12 @@ import conectaDb from '../../core/database.js'
 
 class auth {
 
-    static async criarConta(ra, username, hashed_senha) {
+    static async criarConta(username, hashed_senha) {
         const conexao = await conectaDb()
         const resultado = await conexao.query(`
-            INSERT INTO CalendarNode.Usuarios(ra, username, senha)
+            INSERT INTO CalendarNode.Usuarios(username, senha)
             VALUES
-            (${ra}, '${username}', '${hashed_senha}')
+            ('${username}', '${hashed_senha}')
             `)
 
         return resultado.rowsAffected[0]    
