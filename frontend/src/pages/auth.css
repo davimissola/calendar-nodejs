@@ -1,0 +1,134 @@
+.page-auth {
+    display: grid;
+    align-items: center;
+}
+
+.page-criarconta {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.page-login {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.auth__infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    height: 96vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    border-radius: 70px;
+
+    background:
+    radial-gradient(
+        ellipse at 65% 45%,
+        rgba(61, 207, 255, 0.95) 0%,
+        transparent 55%
+    ),
+    radial-gradient(
+        ellipse at 20% 20%,
+        rgba(103, 170, 255, 0.9) 0%,
+        transparent 55%
+    ),
+    linear-gradient(
+        35deg,
+        #2735a5 0%,
+        #4388ed 35%,
+        #2aa7dd 65%,
+        #252b99 100%
+    );
+    background-size: 150% 150%;
+}
+
+.auth__infos div {
+    padding-left: 5vw;
+}
+
+.auth__infos h2 {
+    font-size: 3.5rem;
+    color: var(--cinza-50);
+}
+
+.auth__infos p {
+    color: var(--cinza-150);
+    font-size: 1.3rem;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth__form h2 {
+    margin-bottom: 50px;
+    font-size: 2.7rem;
+    color: var(--cinza-850);
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+.auth__campo-form {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-bottom: 15px;
+}
+
+.auth__campo-form label {
+    color: var(--cinza-650);
+    font-weight: 450;
+    font-size: 1.1rem;
+    letter-spacing: -.4px;
+}
+
+.auth__campo-form input {
+    height: 40px;
+    background-color: var(--cinza-150);
+    border: none;
+    border-radius: 100px;
+    font-size: 1.15rem;
+    padding-left: 25px;
+}
+
+.auth__form p {
+    height: 20px;
+    color: rgb(211, 133, 133);
+}
+
+.auth__form button {
+    width: 65%;
+    margin-top: 70px;
+    height: 65px;
+    border: none;
+    background-color: #68c5ec;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    color: var(--cinza-50);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth__form button:hover {
+    background-color: #65bbe0
+}
+
+.auth__form span {
+    color: var(--cinza-400);
+    font-size: .95rem;
+    margin-top: 8px;
+}
+
+.auth__form span a {
+    color: #54a2c4;
+    font-weight: 450;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.auth__form span a:hover {
+    color: #4d93b1;
+    text-decoration: underline;
+}
