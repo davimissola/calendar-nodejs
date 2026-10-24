@@ -19,6 +19,11 @@ export function Login() {
             const username: string = String(formData.get('username'))
             const senha: string = String(formData.get('senha'))
 
+            if (/\s/g.test(username)) {
+                setErro('Não coloque espaços no username.')
+                return
+            }
+
             const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
@@ -41,7 +46,7 @@ export function Login() {
             localStorage.setItem('access_token', data.access_token)
             navigate('/')
         } catch(error) {
-            setErro(error)
+            setErro(String(error))
         }
     }
 

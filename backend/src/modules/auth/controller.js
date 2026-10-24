@@ -15,8 +15,8 @@ class authController {
             }
 
             return res.status(201).json({message: 'Usuário criado.'})
-        } catch(error) {
-            return res.status(500).json({message: error})
+        } catch {
+            return res.status(500).json({message: "Erro interno do servidor."})
         }
     }
 
@@ -38,8 +38,8 @@ class authController {
             const token = await criarJwt(usuario.id)
 
             return res.status(200).json({access_token: token, token_type: "Bearer"});
-        } catch(error) {
-            return res.status(500).json({message: error})
+        } catch {
+            return res.status(500).json({message: "Erro interno do servidor."})
         }
     }
 

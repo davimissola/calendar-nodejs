@@ -10,7 +10,7 @@ async function conectaDb() {
         const pool = await mssql.connect(CONNECTION_STRING)
         return pool
     } catch(error) {
-        console.log('Erro ao conectar no banco de dados.')
+        console.log(error.message)
         throw error
     }
 }

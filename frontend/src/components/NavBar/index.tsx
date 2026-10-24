@@ -1,7 +1,7 @@
 import { CalendarDays, Home, LogOut, UserRound } from 'lucide-react'
 import './navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
-import userFoto from '../../assets/userfoto.jpg'
+import userFoto from '../../assets/userfoto2.png'
 import type { PropsNavBar } from '../../types/home'
 
 

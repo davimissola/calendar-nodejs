@@ -49,7 +49,7 @@ export function CriarConta() {
 
             navigate('/login')
         } catch(error) {
-            setErro(error)
+            setErro(String(error))
         }
     }
 

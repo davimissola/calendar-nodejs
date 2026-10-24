@@ -11,5 +11,5 @@ export type UserMeResponse = {
 }
 
 export type PropsNavBar = {
-    user: User
+    user: User | null
 }
